@@ -20,10 +20,10 @@ public class Tire {
     }
 
     public double distanceToCar(Car car) {
-        double topLeft = Math.sqrt(Math.pow(car.getX() - this.x, 2) + Math.pow(car.getY() - this.y, 2))-5;
-        double topRight = Math.sqrt(Math.pow(car.getFarX() - this.x, 2) + Math.pow(car.getY() - this.y, 2))-5;
-        double bottomLeft = Math.sqrt(Math.pow(car.getX() - this.x, 2) + Math.pow(car.getFarY() - this.y, 2))-5;
-        double bottomRight = Math.sqrt(Math.pow(car.getFarX() - this.x, 2) + Math.pow(car.getFarY() - this.y, 2))-5;
+        double topLeft = Math.sqrt(Math.pow(car.getX() - this.x, 2) + Math.pow(car.getY() - this.y, 2));
+        double topRight = Math.sqrt(Math.pow(car.getFarX() - this.x, 2) + Math.pow(car.getY() - this.y, 2));
+        double bottomLeft = Math.sqrt(Math.pow(car.getX() - this.x, 2) + Math.pow(car.getFarY() - this.y, 2));
+        double bottomRight = Math.sqrt(Math.pow(car.getFarX() - this.x, 2) + Math.pow(car.getFarY() - this.y, 2));
 
         return Math.min(Math.min(topLeft, topRight), Math.min(bottomLeft, bottomRight));
     }
