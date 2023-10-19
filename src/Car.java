@@ -4,13 +4,16 @@ import java.security.Key;
 
 public class Car {
     private int x, y, lapCounter;
-    private double speed, direction;
+    private double speed, direction, timeFirstLine, timeSecondLine;
+    private boolean timerActive, finished;
 
     public Car(int x, int y, int direction){
         this.x  = x;
         this.y = y;
         this.direction = direction;
         this.speed = 0;
+        timerActive = false;
+        finished = false;
     }
 
     public void draw(PApplet main){
@@ -21,6 +24,9 @@ public class Car {
         main.rect(-25, -10, 50, 20);
         main.rotate((float) -direction);
         main.translate(-(this.x+25), -(this.y+10));
+
+        main.textSize(30);
+        main.text("Time: " + ((int)(1000*(timeSecondLine-timeFirstLine))/1000.0) + " seconds", 10, 100);
     }
 
     public void act(){
@@ -28,6 +34,15 @@ public class Car {
         this.x += (int) (this.speed * Math.cos(this.direction));
         this.y += (int) (this.speed * Math.sin(this.direction));
         speed *= 0.999;
+        if (timerActive && !finished) {
+            timeSecondLine = (double) System.currentTimeMillis() /1000;
+        }
+        if (checkStartLine() && this.timeFirstLine == 0) {
+            startTime((double) System.currentTimeMillis() /1000);
+        }
+        if (checkFinishLine() && !finished) {
+            endTime((double) System.currentTimeMillis() /1000);
+        }
     }
 
     public void collision(Tire tire, PApplet main){
@@ -39,7 +54,12 @@ public class Car {
 
     public boolean checkFinishLine(){
         //TODO: check if car has crossed the finish line
-        return true;
+        return this.x >= 550;
+    }
+
+    public boolean checkStartLine(){
+        //TODO: check if car has crossed the start line
+        return this.x >= 150;
     }
 
     public int getX() {
@@ -95,5 +115,15 @@ public class Car {
 
     public void stop(){
         this.speed = 0;
+    }
+
+    public void startTime(double timeFirstLine) {
+        this.timeFirstLine = timeFirstLine;
+        timerActive = true;
+    }
+
+    public void endTime(double timeSecondLine) {
+        this.timeSecondLine = timeSecondLine;
+        finished = true;
     }
 }
