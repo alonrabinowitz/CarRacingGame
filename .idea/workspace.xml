@@ -56,7 +56,7 @@
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/alonrab/dev/workspaces/java/School/CarRacingGame&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/alonrab/dev/workspaces/java/School/APCS/CarRacingGame&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -88,6 +88,8 @@
       <workItem from="1697476241521" duration="7783000" />
       <workItem from="1697572294414" duration="5238000" />
       <workItem from="1697912289395" duration="324000" />
+      <workItem from="1698079285952" duration="199000" />
+      <workItem from="1698079489480" duration="586000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <option name="closed" value="true" />
