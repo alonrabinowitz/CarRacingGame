@@ -17,7 +17,6 @@ public class Car {
     }
 
     public void draw(PApplet main){
-        //TODO: draw car
         main.fill(17, 155, 17);
         main.translate(this.x+25, this.y+10);
         main.rotate((float) direction);
@@ -30,7 +29,6 @@ public class Car {
     }
 
     public void act(){
-        //TODO: move car
         this.x += (int) (this.speed * Math.cos(this.direction));
         this.y += (int) (this.speed * Math.sin(this.direction));
         speed *= 0.999;
@@ -46,19 +44,16 @@ public class Car {
     }
 
     public void collision(Tire tire, PApplet main){
-        //TODO: check for collision, if yes do something(crash car/change direction)
         if (tire.distanceToCar(this) < 10) {
             this.carGoBoom(main);
         }
     }
 
     public boolean checkFinishLine(){
-        //TODO: check if car has crossed the finish line
         return this.x >= 550;
     }
 
     public boolean checkStartLine(){
-        //TODO: check if car has crossed the start line
         return this.x >= 150;
     }
 
