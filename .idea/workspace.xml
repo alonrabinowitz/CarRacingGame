@@ -5,7 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4dd3e9ce-cf0f-4bd1-8019-98fcd80861b2" name="Changes" comment=".">
+      <change afterPath="$PROJECT_DIR$/data/Untitled-1.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/pathImg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/FileIO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CarRacing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarRacing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tire.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,13 +49,16 @@
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="2Wg19UNTzIPp6KXOiv0uL5ICmZt" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
@@ -90,6 +99,11 @@
       <workItem from="1697912289395" duration="324000" />
       <workItem from="1698079285952" duration="199000" />
       <workItem from="1698079489480" duration="586000" />
+      <workItem from="1700166623712" duration="4738000" />
+      <workItem from="1700447904283" duration="110000" />
+      <workItem from="1700448451397" duration="661000" />
+      <workItem from="1700511563772" duration="602000" />
+      <workItem from="1701367080873" duration="596000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <option name="closed" value="true" />
@@ -125,6 +139,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>

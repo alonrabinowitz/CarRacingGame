@@ -3,7 +3,8 @@ import processing.core.PApplet;
 import java.security.Key;
 
 public class Car {
-    private int x, y, lapCounter;
+    private int lapCounter;
+    private float x, y;
     private double speed, direction, timeFirstLine, timeSecondLine;
     private boolean timerActive, finished;
 
@@ -57,19 +58,19 @@ public class Car {
         return this.x >= 150;
     }
 
-    public int getX() {
+    public float getX() {
         return x;
     }
 
-    public int getFarX() {
+    public float getFarX() {
         return x+50;
     }
 
-    public int getY() {
+    public float getY() {
         return y;
     }
 
-    public int getFarY() {
+    public float getFarY() {
         return y+20;
     }
 
