@@ -105,7 +105,7 @@ public class CarRacing extends PApplet {
 
     public ArrayList<Tire> getTiresFromFile() throws IOException {
         ArrayList<Tire> tireList = new ArrayList<>();
-        String[] tires = FileIO.readFile("data/tires.txt").split("\n");
+        String[] tires = FileIO.readFile("data/tires.txt").trim().split("\n");
         for (String tire : tires) {
             String[] coords = tire.split(",");
             tireList.add(new Tire(Integer.parseInt(coords[0]), Integer.parseInt(coords[1])));
