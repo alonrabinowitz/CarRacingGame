@@ -108,7 +108,7 @@ public class CarRacing extends PApplet {
         String[] tires = FileIO.readFile("data/tires.txt").trim().split("\n");
         for (String tire : tires) {
             String[] coords = tire.split(",");
-            tireList.add(new Tire(Integer.parseInt(coords[0]), Integer.parseInt(coords[1])));
+            tireList.add(new Tire(Integer.parseInt(coords[0].trim()), Integer.parseInt(coords[1].trim())));
         }
         return tireList;
     }
