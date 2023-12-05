@@ -3,7 +3,6 @@ import processing.core.PImage;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.concurrent.Callable;
 
 public class CarRacing extends PApplet {
     ArrayList<Car> cars;
@@ -85,6 +84,13 @@ public class CarRacing extends PApplet {
                 throw new RuntimeException(e);
             }
         }
+        if (key == 'l') {
+            try {
+                tires = getTiresFromFile();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 
     public void writeTiresToFile(ArrayList<Tire> tires) throws IOException {
@@ -95,6 +101,16 @@ public class CarRacing extends PApplet {
         }
         output += tires.get(tires.size()-1).getX() + "," + tires.get(tires.size()-1).getY();
         FileIO.writeDataToFile("data/tires.txt", output);
+    }
+
+    public ArrayList<Tire> getTiresFromFile() throws IOException {
+        ArrayList<Tire> tireList = new ArrayList<>();
+        String[] tires = FileIO.readFile("data/tires.txt").split("\n");
+        for (String tire : tires) {
+            String[] coords = tire.split(",");
+            tireList.add(new Tire(Integer.parseInt(coords[0]), Integer.parseInt(coords[1])));
+        }
+        return tireList;
     }
 
     public void keyReleased(){
