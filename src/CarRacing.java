@@ -12,7 +12,7 @@ public class CarRacing extends PApplet {
     ArrayList<Car> cars;
     ArrayList<Tire> tires;
     boolean paused = false;
-    PImage track;
+    PImage track, carImage;
     Tire tempTire;
 
     public void settings() {
@@ -24,12 +24,14 @@ public class CarRacing extends PApplet {
         cars = new ArrayList<>();
         tires = new ArrayList<>();
         track = loadImage("data/pathImg.png");
+        carImage = loadImage("car_carGoBoom.png");
+        carImage.resize(30, 75);
 
         loader = new Minim(this);
         boom = loader.loadFile("Boom-AF.mp3");
         vroom = loader.loadFile("Vroom-AF.mp3");
 
-        cars.add(new Car(10, 50, 0, vroom, boom));
+        cars.add(new Car(10, 50, 0, vroom, boom, carImage));
 //        for (int i = 10; i < 800; i+=20) {
 //            tires.add(new Tire(i, 300));
 //            tires.add(new Tire(i, 500));

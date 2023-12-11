@@ -1,6 +1,7 @@
 import ddf.minim.AudioPlayer;
 import ddf.minim.Minim;
 import processing.core.PApplet;
+import processing.core.PImage;
 
 import java.security.Key;
 
@@ -11,8 +12,9 @@ public class Car {
     private boolean timerActive, finished;
     Minim loader;
     AudioPlayer vroom, boom;
+    PImage carImage;
 
-    public Car(int x, int y, int direction, AudioPlayer vroom, AudioPlayer boom){
+    public Car(int x, int y, int direction, AudioPlayer vroom, AudioPlayer boom, PImage carImage){
         this.x  = x;
         this.y = y;
         this.direction = direction;
@@ -22,16 +24,19 @@ public class Car {
         loader = new Minim(this);
         this.boom = boom;
         this.vroom = vroom;
-
+        this.carImage = carImage;
     }
 
     public void draw(PApplet main){
+
         main.fill(17, 155, 17);
         main.translate(this.x+25, this.y+10);
         main.rotate((float) direction);
         main.rect(-25, -10, 50, 20);
+        main.image(carImage, -25, -10);
         main.rotate((float) -direction);
         main.translate(-(this.x+25), -(this.y+10));
+
 
         main.textSize(30);
         main.text("Time: " + ((int)(1000*(timeSecondLine-timeFirstLine))/1000.0) + " seconds", 10, 100);
