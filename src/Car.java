@@ -1,3 +1,5 @@
+import ddf.minim.AudioPlayer;
+import ddf.minim.Minim;
 import processing.core.PApplet;
 
 import java.security.Key;
@@ -7,14 +9,20 @@ public class Car {
     private float x, y;
     private double speed, direction, timeFirstLine, timeSecondLine;
     private boolean timerActive, finished;
+    Minim loader;
+    AudioPlayer vroom, boom;
 
-    public Car(int x, int y, int direction){
+    public Car(int x, int y, int direction, AudioPlayer vroom, AudioPlayer boom){
         this.x  = x;
         this.y = y;
         this.direction = direction;
         this.speed = 0;
         timerActive = false;
         finished = false;
+        loader = new Minim(this);
+        this.boom = boom;
+        this.vroom = vroom;
+
     }
 
     public void draw(PApplet main){
@@ -51,11 +59,11 @@ public class Car {
     }
 
     public boolean checkFinishLine(){
-        return this.x >= 550;
+        return this.x >= 790;
     }
 
     public boolean checkStartLine(){
-        return this.x >= 150;
+        return this.x >= 30;
     }
 
     public float getX() {
@@ -76,6 +84,9 @@ public class Car {
 
 
     public void carGoBoom(PApplet main){
+        vroom.mute();
+        boom.rewind();
+        boom.play();
         main.strokeWeight(0);
         main.fill(245,200,10);
         main.ellipse(this.x+25, this.y+10, 300, 300);
@@ -87,6 +98,8 @@ public class Car {
         main.textSize(100);
         main.text("BOOM", this.x-125, this.y+45);
         stop();
+
+
     }
 
     public void turnLeft(){

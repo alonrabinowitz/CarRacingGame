@@ -1,3 +1,5 @@
+import ddf.minim.AudioPlayer;
+import ddf.minim.Minim;
 import processing.core.PApplet;
 import processing.core.PImage;
 
@@ -5,6 +7,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class CarRacing extends PApplet {
+    Minim loader;
+    AudioPlayer vroom, boom;
     ArrayList<Car> cars;
     ArrayList<Tire> tires;
     boolean paused = false;
@@ -16,11 +20,16 @@ public class CarRacing extends PApplet {
     }
 
     public void setup() {
+
         cars = new ArrayList<>();
         tires = new ArrayList<>();
         track = loadImage("data/pathImg.png");
 
-        cars.add(new Car(10, 390, 0));
+        loader = new Minim(this);
+        boom = loader.loadFile("Boom-AF.mp3");
+        vroom = loader.loadFile("Vroom-AF.mp3");
+
+        cars.add(new Car(10, 50, 0, vroom, boom));
 //        for (int i = 10; i < 800; i+=20) {
 //            tires.add(new Tire(i, 300));
 //            tires.add(new Tire(i, 500));
@@ -32,8 +41,8 @@ public class CarRacing extends PApplet {
         fill(255);
 //        rect(0, 300, 800, 200);
         image(track, 0, 0);
-        line(200, 300, 200, 500);
-        line(600, 300, 600, 500);
+        line(100, 20, 100, 120);
+        line(790, 550, 790, 750);
         for (Car car : cars) {
             car.draw(this);
             if (!paused) {
@@ -67,6 +76,9 @@ public class CarRacing extends PApplet {
             }
             if (keyCode == UP) {
                 cars.get(0).gasUp();
+                vroom.rewind();
+                vroom.loop();
+
             }
             if (keyCode == DOWN) {
                 cars.get(0).gasDown();
@@ -75,7 +87,12 @@ public class CarRacing extends PApplet {
         }
         if (key == 'p'){
 //            paused = !paused;
-            cars.get(0).carGoBoom(this);
+            for (int i = 0; i < cars.size(); i++) {
+                cars.get(i).carGoBoom(this);
+                boom.play();
+                boom.rewind();
+            }
+
         }
         if (key == 's') {
             try {
