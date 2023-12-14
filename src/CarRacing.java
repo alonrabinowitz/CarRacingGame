@@ -13,7 +13,7 @@ public class CarRacing extends PApplet {
     ArrayList<Tire> tires;
     boolean paused = false;
     PImage track, carImage;
-    Tire tempTire;
+//    Tire tempTire;
 
     public void settings() {
         size(800, 800);   // set the window size
@@ -22,26 +22,26 @@ public class CarRacing extends PApplet {
     public void setup() {
 
         cars = new ArrayList<>();
-        tires = new ArrayList<>();
+        try {
+            tires = getTiresFromFile();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         track = loadImage("data/pathImg.png");
         carImage = loadImage("car_carGoBoom.png");
-        carImage.resize(30, 75);
+        carImage.resize(20, 50);
 
         loader = new Minim(this);
         boom = loader.loadFile("Boom-AF.mp3");
         vroom = loader.loadFile("Vroom-AF.mp3");
 
         cars.add(new Car(10, 50, 0, vroom, boom, carImage));
-//        for (int i = 10; i < 800; i+=20) {
-//            tires.add(new Tire(i, 300));
-//            tires.add(new Tire(i, 500));
-//        }
+
     }
 
     public void draw() {
-        background(217);    // paint screen white
+        background(217);
         fill(255);
-//        rect(0, 300, 800, 200);
         image(track, 0, 0);
         line(100, 20, 100, 120);
         line(790, 550, 790, 750);
@@ -54,19 +54,13 @@ public class CarRacing extends PApplet {
         for (Tire tire : tires) {
             tire.draw(this);
         }
-        for (Car car: cars){
-            for (Tire tire: tires){
+        for (Car car : cars) {
+            for (Tire tire : tires) {
                 car.collision(tire, this);
-//                car.stop();
             }
         }
-        tempTire = new Tire(mouseX, mouseY);
-        tempTire.draw(this);
     }
 
-    public void mouseReleased() {
-        tires.add(tempTire);
-    }
 
     public void keyPressed(){
         if (key == CODED) {
@@ -77,12 +71,14 @@ public class CarRacing extends PApplet {
                 cars.get(0).turnRight();
             }
             if (keyCode == UP) {
+                vroom.unmute();
                 cars.get(0).gasUp();
                 vroom.rewind();
                 vroom.loop();
 
             }
             if (keyCode == DOWN) {
+                vroom.mute();
                 cars.get(0).gasDown();
             }
 
@@ -90,6 +86,7 @@ public class CarRacing extends PApplet {
         if (key == 'p'){
 //            paused = !paused;
             for (int i = 0; i < cars.size(); i++) {
+                boom.unmute();
                 cars.get(i).carGoBoom(this);
                 boom.play();
                 boom.rewind();
@@ -133,7 +130,12 @@ public class CarRacing extends PApplet {
     }
 
     public void keyReleased(){
-
+        if (key == 'r') {
+            // Reset button
+            vroom.close();
+            boom.close();
+            setup();
+        }
     }
 
     public static void main(String[] args) {

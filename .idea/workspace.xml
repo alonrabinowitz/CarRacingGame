@@ -4,16 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4dd3e9ce-cf0f-4bd1-8019-98fcd80861b2" name="Changes" comment="PEEP_ADDED_TIRES&gt;:D">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/libererys.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Boom-AF.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Vroom-AF.mp3" afterDir="false" />
+    <list default="true" id="4dd3e9ce-cf0f-4bd1-8019-98fcd80861b2" name="Changes" comment="temp">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/jl1_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Vroom-AF-old.mp3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Game.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Game.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/pathImg.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/pathImg.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Game/data/pathImg.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Game/data/pathImg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vroom-AF.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/Vroom-AF.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Untitled-1.psd" beforeDir="false" afterPath="$PROJECT_DIR$/data/Untitled-1.psd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/Vroom-AF.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Game/Vroom-AF.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Game/data/Untitled-1.psd" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Game/data/Untitled-1.psd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Car.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CarRacing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CarRacing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tire.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +29,16 @@
       </list>
     </option>
   </component>
+  <component name="Git.Pull.Settings">
+    <option name="OPTIONS">
+      <set>
+        <option value="REBASE" />
+      </set>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -71,7 +81,7 @@
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/freik/IdeaProjects/CarRacingGame",
+    "last_opened_file_path": "/Users/alonrab/dev/workspaces/java/School/APCS/CarRacingGame",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -86,13 +96,8 @@
   }
 }]]></component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\freik\IdeaProjects\CarRacingGame" />
-      <recent name="C:\Users\freik\IdeaProjects\CarRacingGame\lib" />
-      <recent name="C:\Users\freik\IdeaProjects\CarRacingGame\data" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\freik\IdeaProjects\CarRacingGame" />
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager">
@@ -156,21 +161,7 @@
       <option name="project" value="LOCAL" />
       <updated>1701810269983</updated>
     </task>
-    <task id="LOCAL-00005" summary="PEEP_ADDED_TIRES&gt;:D">
-      <created>1701810939462</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1701810939462</updated>
-    </task>
-    <task id="LOCAL-00006" summary="PEEP_ADDED_TIRES&gt;:D">
-      <created>1701811014062</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1701811014062</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,18 +184,7 @@
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
     <MESSAGE value="." />
-    <MESSAGE value="PEEP_ADDED_TIRES&gt;:D" />
-    <option name="LAST_COMMIT_MESSAGE" value="PEEP_ADDED_TIRES&gt;:D" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.NullPointerException" package="java.lang" />
-          <option name="timeStamp" value="1" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CarRacingGame$CarRacing.ic" NAME="CarRacing Coverage Results" MODIFIED="1697570494624" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

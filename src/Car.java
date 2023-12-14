@@ -9,7 +9,7 @@ public class Car {
     private int lapCounter;
     private float x, y;
     private double speed, direction, timeFirstLine, timeSecondLine;
-    private boolean timerActive, finished;
+    private boolean timerActive, finished, playingBoom;
     Minim loader;
     AudioPlayer vroom, boom;
     PImage carImage;
@@ -25,18 +25,17 @@ public class Car {
         this.boom = boom;
         this.vroom = vroom;
         this.carImage = carImage;
+        this.playingBoom = false;
     }
 
-    public void draw(PApplet main){
 
+    public void draw(PApplet main){
         main.fill(17, 155, 17);
         main.translate(this.x+25, this.y+10);
-        main.rotate((float) direction);
-        main.rect(-25, -10, 50, 20);
-        main.image(carImage, -25, -10);
-        main.rotate((float) -direction);
+        main.rotate((float) direction + (float) (3*Math.PI/2));
+        main.image(carImage, -10, -25);
+        main.rotate((float) -direction - (float) (3*Math.PI/2));
         main.translate(-(this.x+25), -(this.y+10));
-
 
         main.textSize(30);
         main.text("Time: " + ((int)(1000*(timeSecondLine-timeFirstLine))/1000.0) + " seconds", 10, 100);
@@ -58,7 +57,7 @@ public class Car {
     }
 
     public void collision(Tire tire, PApplet main){
-        if (tire.distanceToCar(this) < 10) {
+        if (tire.distanceToCar(this) < 5) {
             this.carGoBoom(main);
         }
     }
@@ -89,9 +88,12 @@ public class Car {
 
 
     public void carGoBoom(PApplet main){
-        vroom.mute();
-        boom.rewind();
-        boom.play();
+        if (!playingBoom) {
+            vroom.mute();
+            boom.rewind();
+            boom.play();
+            playingBoom = true;
+        }
         main.strokeWeight(0);
         main.fill(245,200,10);
         main.ellipse(this.x+25, this.y+10, 300, 300);
